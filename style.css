@@ -392,3 +392,63 @@
     margin-right:2px!important;
   }
 }
+
+/* ===== MOBILE FINAL FIX ===== */
+@media (max-width: 768px) {
+
+  /* File portal manji na mobitelu */
+  .filePortal,
+  .file-portal,
+  a[href*="portal"] {
+    transform: scale(0.88);
+    transform-origin: right center;
+  }
+
+  /* Partneri više nisu preko hero slike */
+  .partners,
+  .partnerGrid,
+  .partner-grid,
+  .partnersGrid {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 18px !important;
+    padding: 0 14px !important;
+  }
+
+  .partnerCard,
+  .partner-card {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  /* TikTok / glavni QR isto spusti ispod slike */
+  .socialCorner,
+  .social-corner {
+    position: static !important;
+    width: calc(100% - 28px) !important;
+    max-width: 420px !important;
+    margin: 18px auto 0 !important;
+    transform: none !important;
+  }
+
+  /* Hero neka bude čist bez kartica preko auta */
+  .hero {
+    overflow: visible !important;
+  }
+
+  /* WhatsApp ostaje vidljiv */
+  .whatsapp,
+  .whatsappBtn,
+  .whatsapp-btn {
+    position: fixed !important;
+    right: 16px !important;
+    bottom: 18px !important;
+    z-index: 9999 !important;
+  }
+}
