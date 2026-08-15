@@ -392,63 +392,90 @@
     margin-right:2px!important;
   }
 }
+/* ===== HABIBI MOBILE LAYOUT FINAL ===== */
+@media (max-width:650px){
 
-/* ===== MOBILE FINAL FIX ===== */
-@media (max-width: 768px) {
-
-  /* File portal manji na mobitelu */
-  .filePortal,
-  .file-portal,
-  a[href*="portal"] {
-    transform: scale(0.88);
-    transform-origin: right center;
+  /* FILE PORTAL malo manji */
+  a[href*="portal"]{
+    transform:scale(.82)!important;
+    transform-origin:right center!important;
   }
 
-  /* Partneri više nisu preko hero slike */
-  .partners,
-  .partnerGrid,
-  .partner-grid,
-  .partnersGrid {
-    position: static !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 18px !important;
-    padding: 0 14px !important;
+  /* Cijeli QR + PARTNER blok ide ISPOD hero slike */
+  .socialCorner{
+    position:static!important;
+    width:calc(100% - 24px)!important;
+    max-width:100%!important;
+    height:auto!important;
+    margin:12px auto 24px!important;
+    padding:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:10px!important;
+    transform:none!important;
   }
 
-  .partnerCard,
-  .partner-card {
-    position: static !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    transform: none !important;
+  /* Glavni Habibi TikTok QR manji */
+  .habibiMainSocial{
+    position:static!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    margin:0!important;
+    padding:10px!important;
   }
 
-  /* TikTok / glavni QR isto spusti ispod slike */
-  .socialCorner,
-  .social-corner {
-    position: static !important;
-    width: calc(100% - 28px) !important;
-    max-width: 420px !important;
-    margin: 18px auto 0 !important;
-    transform: none !important;
+  .habibiMainSocial img{
+    width:70px!important;
+    height:70px!important;
+    object-fit:contain!important;
   }
 
-  /* Hero neka bude čist bez kartica preko auta */
-  .hero {
-    overflow: visible !important;
+  /* Partner kartice kompaktne i ispod slike */
+  .partnerLogoCard,
+  .bskPartnerCard,
+  .asmirPartnerCard{
+    position:static!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:9px 12px!important;
+    transform:none!important;
   }
 
-  /* WhatsApp ostaje vidljiv */
-  .whatsapp,
-  .whatsappBtn,
-  .whatsapp-btn {
-    position: fixed !important;
-    right: 16px !important;
-    bottom: 18px !important;
-    z-index: 9999 !important;
+  /* Partner logotipi manji */
+  .partnerLogo,
+  .bskLogo,
+  .asmirLogo{
+    height:30px!important;
+    max-height:30px!important;
+    object-fit:contain!important;
+  }
+
+  /* QR redovi manji */
+  .partnerQrRow,
+  .asmirQrRow{
+    grid-template-columns:42px 1fr!important;
+    gap:8px!important;
+    min-height:0!important;
+  }
+
+  .partnerQrRow img,
+  .asmirQrRow img{
+    width:42px!important;
+    height:42px!important;
+    object-fit:contain!important;
+  }
+
+  .partnerQrRow small,
+  .asmirQrRow small{
+    font-size:9px!important;
+  }
+
+  /* Hero slika ostaje potpuno čista */
+  .hero{
+    overflow:visible!important;
   }
 }
