@@ -479,3 +479,71 @@
     overflow:visible!important;
   }
 }
+
+/* ===== HABIBI MOBILE FORCE FIX ===== */
+@media screen and (max-width: 650px) {
+
+  /* FILE PORTAL malo manji */
+  a[href*="portal"] {
+    transform: scale(.78) !important;
+    transform-origin: right center !important;
+  }
+
+  /* PARTNERI ISPOD HERO SLIKE */
+  .partners,
+  .partnerGrid,
+  .partner-grid,
+  .partnersGrid {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    margin: 8px auto 12px !important;
+    padding: 0 !important;
+  }
+
+  /* Svaki partner mali */
+  .partnerCard,
+  .partner-card {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 6px !important;
+  }
+
+  /* Partner logo */
+  .partnerCard img,
+  .partner-card img {
+    max-width: 100% !important;
+    height: 35px !important;
+    object-fit: contain !important;
+  }
+
+  /* QR / TikTok također dole */
+  .socialCorner,
+  .social-corner {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    margin: 6px auto 15px !important;
+  }
+
+  /* HERO ne smije sadržavati plutajuće kartice */
+  .hero {
+    overflow: visible !important;
+  }
+}
