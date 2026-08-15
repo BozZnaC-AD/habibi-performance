@@ -392,3 +392,40 @@
     margin-right:2px!important;
   }
 }
+/* ===== MOBILE: SAKRIJ PARTNERE I QR ===== */
+@media screen and (max-width: 650px) {
+
+    /* Svi partneri */
+    .partners,
+    .partnerGrid,
+    .partner-grid,
+    .partnersGrid,
+    .partnerCard,
+    .partner-card,
+    .partnerLogoCard,
+    .bskPartnerCard,
+    .asmirPartnerCard,
+    .partnerQrRow,
+    .asmirQrRow {
+        display: none !important;
+    }
+
+    /* Glavni TikTok / QR */
+    .socialCorner,
+    .social-corner,
+    .habibiMainSocial {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 650px) {
+
+    [class*="partner"],
+    [class*="Partner"] {
+        display: none !important;
+    }
+
+    .socialCorner,
+    .habibiMainSocial {
+        display: none !important;
+    }
+}
