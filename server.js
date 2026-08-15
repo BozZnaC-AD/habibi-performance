@@ -15,7 +15,7 @@ function verify(p,v){let [s,k]=v.split(":");return crypto.timingSafeEqual(Buffer
 function me(req){let t=req.headers.cookie?.match(/hp_session=([^;]+)/)?.[1],d=read();return t&&d.sessions[t]?d.users.find(u=>u.id===d.sessions[t].userId):null}
 function auth(req,res,next){let u=me(req);if(!u)return res.status(401).json({error:"Login required"});req.user=u;next()}
 function login(res,uid){let d=read(),t=crypto.randomBytes(32).toString("hex");d.sessions[t]={userId:uid};write(d);res.setHeader("Set-Cookie",`hp_session=${t}; HttpOnly; Path=/; SameSite=Lax; Max-Age=604800`)}
-app.use(express.json());app.use(express.urlencoded({extended:true}));app.use(express.static(path.join(ROOT));
+app.use(express.json());app.use(express.urlencoded({extended:true}));app.use(express.static(ROOT));
 app.get("/api/me",(req,res)=>{let u=me(req);if(!u)return res.json({user:null});let x={...u};delete x.password;res.json({user:x})});
 app.post("/api/register",(req,res)=>{let {name,email,password}=req.body;if(!name||!email||!password||password.length<8)return res.status(400).json({error:"Fill all fields; password needs 8+ characters"});let d=read(),e=email.toLowerCase();if(d.users.some(u=>u.email===e))return res.status(409).json({error:"Email already registered"});let u={id:id("USR"),name,email:e,password:hash(password),credits:0,admin:false,createdAt:new Date().toISOString()};d.users.push(u);write(d);login(res,u.id);res.json({ok:true})});
 app.post("/api/login",(req,res)=>{let d=read(),u=d.users.find(x=>x.email===String(req.body.email||"").toLowerCase());if(!u||!verify(req.body.password||"",u.password))return res.status(401).json({error:"Invalid login"});login(res,u.id);res.json({ok:true})});
